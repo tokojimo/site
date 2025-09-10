@@ -309,6 +309,4 @@
 /sound-converter.html
 /typography-converter.html
 /volume-lumber-converter.html
-/common-unit-systems.php
-/about-us.php
-/sitemap.php
+/sitemap.html
