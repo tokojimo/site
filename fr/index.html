@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convertisseurs d’unités précis et rapides | MesureConvert</title>
+    <meta name="description" content="Convertissez longueur, masse, température, volume, vitesse, données et plus. Résultats fiables, formules et exemples." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MesureConvert" />
+    <meta property="og:title" content="Convertisseurs d’unités précis et rapides | MesureConvert" />
+    <meta property="og:description" content="Convertissez longueur, masse, température, volume, vitesse, données et plus. Résultats fiables, formules et exemples." />
+    <meta property="og:url" content="/fr/" />
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<nav class="lang-switch"><a href="/fr/">FR</a> | <a href="/en/">EN</a> | <a href="/ar/">AR</a></nav>
+    <header>
+        <p class="site-title"><a href="index.html">Convertisseur Universel</a></p>
+    </header>
+    <main>
+        <h1>Convertisseurs d’unités fiables, instantanés.</h1>
+        <p>Entrez une valeur, choisissez vos unités, obtenez le résultat et la formule. Sans inscription.</p>
+        <div class="converter">
+            <div class="row">
+                <label for="category">Catégorie</label>
+                <select id="category">
+                    <option value="length">Longueur</option>
+                    <option value="weight">Masse</option>
+                    <option value="temperature">Température</option>
+                    <option value="area">Aire</option>
+                    <option value="volume">Volume</option>
+                    <option value="time">Temps</option>
+                    <option value="frequency">Fréquence</option>
+                    <option value="speed">Vitesse</option>
+                    <option value="acceleration">Accélération</option>
+                    <option value="force">Force</option>
+                    <option value="pressure">Pression</option>
+                    <option value="energy">Énergie</option>
+                    <option value="power">Puissance</option>
+                    <option value="density">Densité</option>
+                    <option value="flow">Débit</option>
+                    <option value="torque">Couple</option>
+                    <option value="angle">Angle</option>
+                    <option value="data">Données</option>
+                </select>
+            </div>
+            <div class="row">
+                <label for="from-value">Valeur</label>
+                <input type="number" id="from-value" value="0" />
+            </div>
+            <div class="row">
+                <label for="from-unit">De</label>
+                <select id="from-unit"></select>
+            </div>
+            <div class="row">
+                <label for="to-unit">À</label>
+                <select id="to-unit"></select>
+            </div>
+            <div class="row">
+                <label for="precision">Précision</label>
+                <input type="number" id="precision" min="0" max="6" value="4" />
+            </div>
+            <div class="row">
+                <button id="convert-btn">Convertir</button>
+            </div>
+            <div class="row result">
+                <span id="result">0</span>
+            </div>
+            <div class="row">
+                <span id="precision-badge">Précision: 4 décimales</span>
+            </div>
+        </div>
+        <p><a class="cta" href="convertisseurs/index.html">Ouvrir le convertisseur</a></p>
+        <section>
+            <h2>Convertisseurs par catégorie</h2>
+            <ul class="categories">
+                <li><a href="convertisseurs/index.html?cat=length">Longueur – Conversions entre m, ft, km, mi, cm, in…</a></li>
+                <li><a href="convertisseurs/index.html?cat=weight">Masse – Conversions entre kg, lb, g, oz…</a></li>
+                <li><a href="convertisseurs/index.html?cat=temperature">Température – Conversions entre °C, °F, K…</a></li>
+                <li><a href="convertisseurs/index.html?cat=volume">Volume – Conversions entre L, gal, m³…</a></li>
+                <li><a href="convertisseurs/index.html?cat=area">Aire – Conversions entre m², ft²…</a></li>
+                <li><a href="convertisseurs/index.html?cat=speed">Vitesse – Conversions entre km/h, mph…</a></li>
+                <li><a href="convertisseurs/index.html?cat=time">Temps – Conversions entre s, min, h…</a></li>
+                <li><a href="convertisseurs/index.html?cat=energy">Énergie – Conversions entre J, kWh…</a></li>
+                <li><a href="convertisseurs/index.html?cat=pressure">Pression – Conversions entre Pa, bar…</a></li>
+                <li><a href="convertisseurs/index.html?cat=data">Données – Conversions entre Mo, Go…</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Conversions les plus demandées</h2>
+            <ul class="popular">
+                <li><a href="fr/longueur/convertir-metre-en-pied/">m→ft</a></li>
+                <li><a href="fr/longueur/convertir-centimetre-en-pouce/">cm→in</a></li>
+                <li>kg→lb</li>
+                <li>°C→°F</li>
+                <li>L→gal</li>
+                <li>km/h→mph</li>
+                <li>s→min</li>
+                <li>J→kWh</li>
+                <li>Pa→bar</li>
+                <li>Mo→Go</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Méthode et fiabilité</h2>
+            <p>Formules sourcées (SI, BIPM, NIST). Arrondis expliqués. Accessibilité et respect des données.</p>
+        </section>
+        <section>
+            <h2>Questions fréquentes</h2>
+            <dl>
+                <dt>Les conversions sont-elles exactes ?</dt>
+                <dd>Oui, basées sur définitions officielles; l’arrondi est configurable.</dd>
+                <dt>Puis-je changer la virgule/point ?</dt>
+                <dd>Oui dans les préférences.</dd>
+                <dt>Puis-je exporter ?</dt>
+                <dd>Oui en copie, CSV, lien partageable.</dd>
+            </dl>
+        </section>
+    </main>
+    <footer>
+        <nav>
+            <a href="a-propos.html">À propos</a>
+            <a href="contact.html">Contact</a>
+            <a href="politique-de-confidentialite.html">Confidentialité</a>
+            <a href="conditions-generales.html">Conditions</a>
+            <a href="cookies.html">Cookies</a>
+            <a href="accessibilite.html">Accessibilité</a>
+            <a href="securite-des-donnees.html">Sécurité des données</a>
+            <a href="sitemap.html">Plan du site</a>
+        </nav>
+    </footer>
+    <script src="/script.js"></script>
+</body>
+</html>
