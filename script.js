@@ -128,8 +128,8 @@ const categories = {
             MB: { name: 'Mégaoctet', factor: 1000000 },
             GB: { name: 'Gigaoctet', factor: 1000000000 },
             KiB: { name: 'Kibioctet', factor: 1024 },
-            MiB: { name: 'Mibioctet', factor: 1024 ** 2 },
-            GiB: { name: 'Gibioctet', factor: 1024 ** 3 }
+            MiB: { name: 'Mibioctet', factor: Math.pow(1024, 2) },
+            GiB: { name: 'Gibioctet', factor: Math.pow(1024, 3) }
         }
     },
     temperature: {
