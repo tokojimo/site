@@ -55,8 +55,18 @@
                 <label for="to-unit">À</label>
                 <select id="to-unit"></select>
             </div>
+            <div class="row">
+                <label for="precision">Précision</label>
+                <input type="number" id="precision" min="0" max="6" value="4" />
+            </div>
+            <div class="row">
+                <button id="convert-btn">Convertir</button>
+            </div>
             <div class="row result">
                 <span id="result">0</span>
+            </div>
+            <div class="row">
+                <span id="precision-badge">Précision: 4 décimales</span>
             </div>
         </div>
         <p><a class="cta" href="convertisseurs/index.html">Ouvrir le convertisseur</a></p>
