@@ -162,7 +162,9 @@ function populateUnits(cat) {
         optionTo.textContent = units[key].name;
         toUnit.appendChild(optionTo);
     }
-    toUnit.selectedIndex = 1;
+    // reset selections to avoid keeping units from previous categories
+    fromUnit.selectedIndex = 0;
+    toUnit.selectedIndex = Math.min(1, toUnit.options.length - 1);
 }
 
 function convert() {
