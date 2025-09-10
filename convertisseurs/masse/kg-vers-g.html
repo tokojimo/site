@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Conversion kilogrammes en grammes</title>
+  <meta name="description" content="Convertir des kilogrammes en grammes avec précision.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Comment convertir des kilogrammes en grammes&nbsp;?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Multiplier la masse en kilogrammes par 1&nbsp;000."}
+    }],
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "/"},
+        {"@type": "ListItem", "position": 2, "name": "Convertisseurs", "item": "/convertisseurs/"},
+        {"@type": "ListItem", "position": 3, "name": "Masse", "item": "/convertisseurs/masse/"},
+        {"@type": "ListItem", "position": 4, "name": "kg en g"}
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+  <nav aria-label="Fil d'Ariane">
+    <ol>
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/convertisseurs/">Convertisseurs</a></li>
+      <li><a href="/convertisseurs/masse/">Masse</a></li>
+      <li aria-current="page">kg en g</li>
+    </ol>
+  </nav>
+  <h1>Conversion kilogrammes en grammes</h1>
+  <form id="form-convert">
+    <label for="valeur">Valeur en kilogrammes</label>
+    <input id="valeur" name="valeur" type="number" min="0" style="min-width:44px;min-height:44px;">
+    <button type="submit" style="min-width:44px;min-height:44px;">Convertir</button>
+  </form>
+  <div id="badge-precision">BadgePrecision</div>
+  <div id="carte-formule">
+    <h2>Formule</h2>
+    <p>g = kg × 1 000</p>
+  </div>
+  <div id="bloc-exemples">
+    <h2>Exemples</h2>
+    <ul>
+      <li>0,5 kg = 500 g</li>
+      <li>2 kg = 2&nbsp;000 g</li>
+    </ul>
+  </div>
+  <div id="export-resultats"><button style="min-width:44px;min-height:44px;">Exporter</button></div>
+  <div id="alerte-erreur" role="alert" hidden>Valeur invalide</div>
+  <section id="faq-locale">
+    <h2>FAQ</h2>
+    <div>
+      <h3>Pourquoi multiplier par 1&nbsp;000&nbsp;?</h3>
+      <p>Parce qu'un kilogramme vaut mille grammes.</p>
+    </div>
+  </section>
+</body>
+</html>
