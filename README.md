@@ -12,3 +12,7 @@ Actuellement, les conversions suivantes sont disponibles :
 - **Poids** : kilogrammes, grammes, livres
 - **Température** : Celsius, Fahrenheit, Kelvin
 
+
+## Visualisation en ligne
+
+Visualisez le site directement sur StackBlitz : https://stackblitz.com/github/tokojimo/site
