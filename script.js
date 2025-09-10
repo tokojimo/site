@@ -146,6 +146,14 @@ const fromValue = document.getElementById('from-value');
 const fromUnit = document.getElementById('from-unit');
 const toUnit = document.getElementById('to-unit');
 const resultSpan = document.getElementById('result');
+const precisionInput = document.getElementById('precision');
+const precisionBadge = document.getElementById('precision-badge');
+const convertBtn = document.getElementById('convert-btn');
+
+function updatePrecisionBadge() {
+    const p = parseInt(precisionInput.value, 10) || 0;
+    precisionBadge.textContent = `Précision: ${p} décimales`;
+}
 
 function populateUnits(cat) {
     const units = categories[cat].units;
@@ -172,6 +180,7 @@ function convert() {
     const value = parseFloat(fromValue.value);
     const from = fromUnit.value;
     const to = toUnit.value;
+    const precision = parseInt(precisionInput.value, 10) || 0;
 
     if (isNaN(value)) {
         resultSpan.textContent = '—';
@@ -190,7 +199,7 @@ function convert() {
     if (typeof result === 'undefined' || isNaN(result)) {
         resultSpan.textContent = 'Conversion impossible';
     } else {
-        resultSpan.textContent = result.toFixed(4);
+        resultSpan.textContent = result.toFixed(precision);
     }
 }
 
@@ -230,7 +239,13 @@ categorySelect.addEventListener('change', () => {
 fromValue.addEventListener('input', convert);
 fromUnit.addEventListener('change', convert);
 toUnit.addEventListener('change', convert);
+precisionInput.addEventListener('input', () => {
+    updatePrecisionBadge();
+    convert();
+});
+convertBtn.addEventListener('click', convert);
 
 // Initialize
 populateUnits(categorySelect.value);
+updatePrecisionBadge();
 convert();
