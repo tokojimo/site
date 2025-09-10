@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convertisseur Universel</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1>Convertisseur Universel</h1>
+    </header>
+    <main>
+        <div class="converter">
+            <div class="row">
+                <label for="category">Catégorie</label>
+                <select id="category">
+                    <option value="length">Longueur</option>
+                    <option value="weight">Poids</option>
+                    <option value="temperature">Température</option>
+                </select>
+            </div>
+            <div class="row">
+                <label for="from-value">Valeur</label>
+                <input type="number" id="from-value" value="0" />
+            </div>
+            <div class="row">
+                <label for="from-unit">De</label>
+                <select id="from-unit"></select>
+            </div>
+            <div class="row">
+                <label for="to-unit">À</label>
+                <select id="to-unit"></select>
+            </div>
+            <div class="row result">
+                <span id="result">0</span>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
