@@ -31,3 +31,14 @@ Les conversions suivantes sont disponibles :
 ## Visualisation en ligne
 
 Visualisez le site directement sur StackBlitz : https://stackblitz.com/github/tokojimo/site
+
+## Pages d'information
+
+- [À propos](a-propos.html)
+- [Contact](contact.html)
+- [Politique de confidentialité](politique-de-confidentialite.html)
+- [Conditions générales](conditions-generales.html)
+- [Cookies](cookies.html)
+- [Accessibilité](accessibilite.html)
+- [Sécurité des données](securite-des-donnees.html)
+- [Plan du site](sitemap.html)
