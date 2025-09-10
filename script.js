@@ -178,7 +178,7 @@ function convert() {
         return;
     }
 
-    let result = 0;
+    let result;
 
     if (cat === 'temperature') {
         result = convertTemperature(value, from, to);
@@ -187,7 +187,11 @@ function convert() {
         result = base / categories[cat].units[to].factor;
     }
 
-    resultSpan.textContent = result.toFixed(4);
+    if (typeof result === 'undefined' || isNaN(result)) {
+        resultSpan.textContent = 'Conversion impossible';
+    } else {
+        resultSpan.textContent = result.toFixed(4);
+    }
 }
 
 function convertTemperature(value, from, to) {
@@ -202,6 +206,8 @@ function convertTemperature(value, from, to) {
         case 'k':
             celsius = value - 273.15;
             break;
+        default:
+            return NaN;
     }
 
     switch (to) {
@@ -211,6 +217,8 @@ function convertTemperature(value, from, to) {
             return celsius * 9 / 5 + 32;
         case 'k':
             return celsius + 273.15;
+        default:
+            return NaN;
     }
 }
 
