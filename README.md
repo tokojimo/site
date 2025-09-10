@@ -6,10 +6,25 @@ Un site de conversion de mesures avec une esthétique minimaliste inspirée d'Ap
 
 Ouvrez `index.html` dans votre navigateur préféré pour utiliser le convertisseur.
 
-Actuellement, les conversions suivantes sont disponibles :
+Les conversions suivantes sont disponibles :
 
-- **Longueur** : mètres, kilomètres, miles, pieds
-- **Poids** : kilogrammes, grammes, livres
+- **Longueur** : mètres, centimètres, millimètres, kilomètres, pouces, pieds, miles
+- **Masse** : kilogrammes, grammes, tonnes, livres, onces
+- **Aire** : mètres carrés, centimètres carrés, hectares, acres
+- **Volume** : litres, mètres cubes, gallons (US)
+- **Temps** : secondes, minutes, heures
+- **Fréquence** : hertz, tours/minute, radians/seconde
+- **Vitesse** : m/s, km/h, mph
+- **Accélération** : m/s², g
+- **Force** : newtons, livres-force, kilogrammes-force
+- **Pression** : pascals, bar, atmosphères, psi
+- **Énergie** : joules, kilojoules, mégajoules, watt-heures, kilowatt-heures, calories (th), BTU (IT)
+- **Puissance** : watts, kilowatts, chevaux vapeur
+- **Densité** : kg/m³, g/cm³
+- **Débit** : m³/s, L/min, L/s, m³/h
+- **Couple** : N·m, lbf·ft
+- **Angle** : radians, degrés
+- **Données** : bits, octets, kB, MB, GB, KiB, MiB, GiB
 - **Température** : Celsius, Fahrenheit, Kelvin
 
 
