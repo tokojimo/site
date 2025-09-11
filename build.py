@@ -26,6 +26,7 @@ for page in pages:
     html = html.replace('{{ content }}', content)
     html = html.replace('{{ title }}', page['title'])
     html = html.replace('{{ description }}', page['description'])
+    html = html.replace('{{ lang }}', page.get('lang', 'fr'))
     dest_path = os.path.join(DIST_DIR, page['file'])
     os.makedirs(os.path.dirname(dest_path), exist_ok=True)
     with open(dest_path, 'w', encoding='utf-8') as f:
