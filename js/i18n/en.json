@@ -1,0 +1,144 @@
+{
+  "headline": "Fast, reliable unit converters.",
+  "description": "Enter a value, pick your units, get the result and the formula. No sign-up.",
+  "labels": {
+    "category": "Category",
+    "value": "Value",
+    "from": "From",
+    "to": "To",
+    "precision": "Precision",
+    "convert": "Convert"
+  },
+  "messages": {
+    "precisionBadge": "Precision: {decimals} decimals",
+    "conversionImpossible": "Conversion failed"
+  },
+  "buttons": {
+    "openConverter": "Open converter"
+  },
+  "categories": {
+    "length": "Length",
+    "weight": "Mass",
+    "temperature": "Temperature",
+    "area": "Area",
+    "volume": "Volume",
+    "time": "Time",
+    "frequency": "Frequency",
+    "speed": "Speed",
+    "acceleration": "Acceleration",
+    "force": "Force",
+    "pressure": "Pressure",
+    "energy": "Energy",
+    "power": "Power",
+    "density": "Density",
+    "flow": "Flow",
+    "torque": "Torque",
+    "angle": "Angle",
+    "data": "Data"
+  },
+  "units": {
+    "length": {
+      "m": "Meter",
+      "cm": "Centimeter",
+      "mm": "Millimeter",
+      "km": "Kilometer",
+      "in": "Inch",
+      "ft": "Foot",
+      "mi": "Mile"
+    },
+    "weight": {
+      "kg": "Kilogram",
+      "g": "Gram",
+      "t": "Tonne",
+      "lb": "Pound",
+      "oz": "Ounce"
+    },
+    "area": {
+      "m2": "Square meter",
+      "cm2": "Square centimeter",
+      "ha": "Hectare",
+      "acre": "Acre"
+    },
+    "volume": {
+      "L": "Liter",
+      "m3": "Cubic meter",
+      "gal": "Gallon (US)"
+    },
+    "time": {
+      "s": "Second",
+      "min": "Minute",
+      "h": "Hour"
+    },
+    "frequency": {
+      "Hz": "Hertz",
+      "rpm": "RPM",
+      "rad_s": "Rad/s"
+    },
+    "speed": {
+      "m_s": "m/s",
+      "km_h": "km/h",
+      "mph": "mph"
+    },
+    "acceleration": {
+      "m_s2": "m/s²",
+      "g": "g"
+    },
+    "force": {
+      "N": "Newton",
+      "lbf": "Pound-force",
+      "kgf": "Kilogram-force"
+    },
+    "pressure": {
+      "Pa": "Pascal",
+      "bar": "Bar",
+      "atm": "Atmosphere",
+      "psi": "Psi"
+    },
+    "energy": {
+      "J": "Joule",
+      "kJ": "Kilojoule",
+      "MJ": "Megajoule",
+      "Wh": "Watt-hour",
+      "kWh": "Kilowatt-hour",
+      "cal": "Calorie (th)",
+      "BTU": "BTU (IT)"
+    },
+    "power": {
+      "W": "Watt",
+      "kW": "Kilowatt",
+      "hp": "Horsepower"
+    },
+    "density": {
+      "kg_m3": "kg/m³",
+      "g_cm3": "g/cm³"
+    },
+    "flow": {
+      "m3_s": "m³/s",
+      "L_min": "L/min",
+      "L_s": "L/s",
+      "m3_h": "m³/h"
+    },
+    "torque": {
+      "Nm": "N·m",
+      "lbf_ft": "lbf·ft"
+    },
+    "angle": {
+      "rad": "Radian",
+      "deg": "Degree"
+    },
+    "data": {
+      "B": "Byte",
+      "KB": "Kilobyte",
+      "MB": "Megabyte",
+      "GB": "Gigabyte",
+      "KiB": "Kibibyte",
+      "MiB": "Mebibyte",
+      "GiB": "Gibibyte"
+    },
+    "temperature": {
+      "c": "Celsius",
+      "f": "Fahrenheit",
+      "k": "Kelvin"
+    }
+  }
+}

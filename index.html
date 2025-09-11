@@ -17,59 +17,59 @@
         <p class="site-title"><a href="index.html">MesureConvert</a></p>
     </header>
     <main>
-        <h1>Convertisseurs d’unités fiables, instantanés.</h1>
-        <p>Entrez une valeur, choisissez vos unités, obtenez le résultat et la formule. Sans inscription.</p>
+        <h1 data-i18n="headline"></h1>
+        <p data-i18n="description"></p>
         <div class="converter">
             <div class="row">
-                <label for="category">Catégorie</label>
+                <label for="category" data-i18n="labels.category"></label>
                 <select id="category">
-                    <option value="length">Longueur</option>
-                    <option value="weight">Masse</option>
-                    <option value="temperature">Température</option>
-                    <option value="area">Aire</option>
-                    <option value="volume">Volume</option>
-                    <option value="time">Temps</option>
-                    <option value="frequency">Fréquence</option>
-                    <option value="speed">Vitesse</option>
-                    <option value="acceleration">Accélération</option>
-                    <option value="force">Force</option>
-                    <option value="pressure">Pression</option>
-                    <option value="energy">Énergie</option>
-                    <option value="power">Puissance</option>
-                    <option value="density">Densité</option>
-                    <option value="flow">Débit</option>
-                    <option value="torque">Couple</option>
-                    <option value="angle">Angle</option>
-                    <option value="data">Données</option>
+                    <option value="length" data-i18n="categories.length"></option>
+                    <option value="weight" data-i18n="categories.weight"></option>
+                    <option value="temperature" data-i18n="categories.temperature"></option>
+                    <option value="area" data-i18n="categories.area"></option>
+                    <option value="volume" data-i18n="categories.volume"></option>
+                    <option value="time" data-i18n="categories.time"></option>
+                    <option value="frequency" data-i18n="categories.frequency"></option>
+                    <option value="speed" data-i18n="categories.speed"></option>
+                    <option value="acceleration" data-i18n="categories.acceleration"></option>
+                    <option value="force" data-i18n="categories.force"></option>
+                    <option value="pressure" data-i18n="categories.pressure"></option>
+                    <option value="energy" data-i18n="categories.energy"></option>
+                    <option value="power" data-i18n="categories.power"></option>
+                    <option value="density" data-i18n="categories.density"></option>
+                    <option value="flow" data-i18n="categories.flow"></option>
+                    <option value="torque" data-i18n="categories.torque"></option>
+                    <option value="angle" data-i18n="categories.angle"></option>
+                    <option value="data" data-i18n="categories.data"></option>
                 </select>
             </div>
             <div class="row">
-                <label for="from-value">Valeur</label>
+                <label for="from-value" data-i18n="labels.value"></label>
                 <input type="number" id="from-value" value="0" />
             </div>
             <div class="row">
-                <label for="from-unit">De</label>
+                <label for="from-unit" data-i18n="labels.from"></label>
                 <select id="from-unit"></select>
             </div>
             <div class="row">
-                <label for="to-unit">À</label>
+                <label for="to-unit" data-i18n="labels.to"></label>
                 <select id="to-unit"></select>
             </div>
             <div class="row">
-                <label for="precision">Précision</label>
+                <label for="precision" data-i18n="labels.precision"></label>
                 <input type="number" id="precision" min="0" max="6" value="4" />
             </div>
             <div class="row">
-                <button id="convert-btn">Convertir</button>
+                <button id="convert-btn" data-i18n="labels.convert"></button>
             </div>
             <div class="row result">
                 <span id="result" aria-live="polite">0</span>
             </div>
             <div class="row">
-                <span id="precision-badge">Précision: 4 décimales</span>
+                <span id="precision-badge"></span>
             </div>
         </div>
-        <p><a class="cta" href="convertisseurs/index.html">Ouvrir le convertisseur</a></p>
+        <p><a class="cta" href="convertisseurs/index.html" data-i18n="buttons.openConverter"></a></p>
         <section>
             <h2>Convertisseurs par catégorie</h2>
             <ul class="categories">
@@ -128,6 +128,7 @@
             <a href="sitemap.html">Plan du site</a>
         </nav>
     </footer>
-    <script src="script.js"></script>
+    <script src="js/i18n.js"></script>
+      <script src="script.js"></script>
 </body>
 </html>
