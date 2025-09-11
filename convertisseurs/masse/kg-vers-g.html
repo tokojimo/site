@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Conversion kilogrammes en grammes</title>
   <meta name="description" content="Convertir des kilogrammes en grammes avec précision.">
+  <link rel="stylesheet" href="/style.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -38,8 +39,8 @@
   <h1>Conversion kilogrammes en grammes</h1>
   <form id="form-convert">
     <label for="valeur">Valeur en kilogrammes</label>
-    <input id="valeur" name="valeur" type="number" min="0" style="min-width:44px;min-height:44px;">
-    <button type="submit" style="min-width:44px;min-height:44px;">Convertir</button>
+    <input id="valeur" name="valeur" type="number" min="0" class="input">
+    <button type="submit" class="btn">Convertir</button>
   </form>
   <div id="badge-precision">BadgePrecision</div>
   <div id="carte-formule">
@@ -53,7 +54,7 @@
       <li>2 kg = 2&nbsp;000 g</li>
     </ul>
   </div>
-  <div id="export-resultats"><button style="min-width:44px;min-height:44px;">Exporter</button></div>
+  <div id="export-resultats"><button class="btn">Exporter</button></div>
   <div id="alerte-erreur" role="alert" hidden>Valeur invalide</div>
   <section id="faq-locale">
     <h2>FAQ</h2>
