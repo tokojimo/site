@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-{{ header }}
+{% include 'header.html' %}
 <main>
-{{ content }}
+{{ content | safe }}
 </main>
-{{ footer }}
+{% include 'footer.html' %}
 <script src="/script.js"></script>
 </body>
 </html>
