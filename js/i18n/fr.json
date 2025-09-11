@@ -1,0 +1,144 @@
+{
+  "headline": "Convertisseurs d’unités fiables, instantanés.",
+  "description": "Entrez une valeur, choisissez vos unités, obtenez le résultat et la formule. Sans inscription.",
+  "labels": {
+    "category": "Catégorie",
+    "value": "Valeur",
+    "from": "De",
+    "to": "À",
+    "precision": "Précision",
+    "convert": "Convertir"
+  },
+  "messages": {
+    "precisionBadge": "Précision: {decimals} décimales",
+    "conversionImpossible": "Conversion impossible"
+  },
+  "buttons": {
+    "openConverter": "Ouvrir le convertisseur"
+  },
+  "categories": {
+    "length": "Longueur",
+    "weight": "Masse",
+    "temperature": "Température",
+    "area": "Aire",
+    "volume": "Volume",
+    "time": "Temps",
+    "frequency": "Fréquence",
+    "speed": "Vitesse",
+    "acceleration": "Accélération",
+    "force": "Force",
+    "pressure": "Pression",
+    "energy": "Énergie",
+    "power": "Puissance",
+    "density": "Densité",
+    "flow": "Débit",
+    "torque": "Couple",
+    "angle": "Angle",
+    "data": "Données"
+  },
+  "units": {
+    "length": {
+      "m": "Mètre",
+      "cm": "Centimètre",
+      "mm": "Millimètre",
+      "km": "Kilomètre",
+      "in": "Pouce",
+      "ft": "Pied",
+      "mi": "Mile"
+    },
+    "weight": {
+      "kg": "Kilogramme",
+      "g": "Gramme",
+      "t": "Tonne",
+      "lb": "Livre",
+      "oz": "Once"
+    },
+    "area": {
+      "m2": "Mètre carré",
+      "cm2": "Centimètre carré",
+      "ha": "Hectare",
+      "acre": "Acre"
+    },
+    "volume": {
+      "L": "Litre",
+      "m3": "Mètre cube",
+      "gal": "Gallon (US)"
+    },
+    "time": {
+      "s": "Seconde",
+      "min": "Minute",
+      "h": "Heure"
+    },
+    "frequency": {
+      "Hz": "Hertz",
+      "rpm": "Tours/minute",
+      "rad_s": "Rad/s"
+    },
+    "speed": {
+      "m_s": "m/s",
+      "km_h": "km/h",
+      "mph": "mph"
+    },
+    "acceleration": {
+      "m_s2": "m/s²",
+      "g": "g"
+    },
+    "force": {
+      "N": "Newton",
+      "lbf": "Livre-force",
+      "kgf": "Kilogramme-force"
+    },
+    "pressure": {
+      "Pa": "Pascal",
+      "bar": "Bar",
+      "atm": "Atmosphère",
+      "psi": "Psi"
+    },
+    "energy": {
+      "J": "Joule",
+      "kJ": "Kilojoule",
+      "MJ": "Mégajoule",
+      "Wh": "Watt-heure",
+      "kWh": "Kilowatt-heure",
+      "cal": "Calorie (th)",
+      "BTU": "BTU (IT)"
+    },
+    "power": {
+      "W": "Watt",
+      "kW": "Kilowatt",
+      "hp": "Cheval vapeur"
+    },
+    "density": {
+      "kg_m3": "kg/m³",
+      "g_cm3": "g/cm³"
+    },
+    "flow": {
+      "m3_s": "m³/s",
+      "L_min": "L/min",
+      "L_s": "L/s",
+      "m3_h": "m³/h"
+    },
+    "torque": {
+      "Nm": "N·m",
+      "lbf_ft": "lbf·ft"
+    },
+    "angle": {
+      "rad": "Radian",
+      "deg": "Degré"
+    },
+    "data": {
+      "B": "Octet",
+      "KB": "Kilooctet",
+      "MB": "Mégaoctet",
+      "GB": "Gigaoctet",
+      "KiB": "Kibioctet",
+      "MiB": "Mibioctet",
+      "GiB": "Gibioctet"
+    },
+    "temperature": {
+      "c": "Celsius",
+      "f": "Fahrenheit",
+      "k": "Kelvin"
+    }
+  }
+}
