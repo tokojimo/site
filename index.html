@@ -19,56 +19,63 @@
     <main>
         <h1>Convertisseurs d’unités fiables, instantanés.</h1>
         <p>Entrez une valeur, choisissez vos unités, obtenez le résultat et la formule. Sans inscription.</p>
-        <div class="converter">
-            <div class="row">
-                <label for="category">Catégorie</label>
-                <select id="category">
-                    <option value="length">Longueur</option>
-                    <option value="weight">Masse</option>
-                    <option value="temperature">Température</option>
-                    <option value="area">Aire</option>
-                    <option value="volume">Volume</option>
-                    <option value="time">Temps</option>
-                    <option value="frequency">Fréquence</option>
-                    <option value="speed">Vitesse</option>
-                    <option value="acceleration">Accélération</option>
-                    <option value="force">Force</option>
-                    <option value="pressure">Pression</option>
-                    <option value="energy">Énergie</option>
-                    <option value="power">Puissance</option>
-                    <option value="density">Densité</option>
-                    <option value="flow">Débit</option>
-                    <option value="torque">Couple</option>
-                    <option value="angle">Angle</option>
-                    <option value="data">Données</option>
-                </select>
-            </div>
-            <div class="row">
-                <label for="from-value">Valeur</label>
-                <input type="number" id="from-value" value="0" />
-            </div>
-            <div class="row">
-                <label for="from-unit">De</label>
-                <select id="from-unit"></select>
-            </div>
-            <div class="row">
-                <label for="to-unit">À</label>
-                <select id="to-unit"></select>
-            </div>
-            <div class="row">
-                <label for="precision">Précision</label>
-                <input type="number" id="precision" min="0" max="6" value="4" />
-            </div>
-            <div class="row">
-                <button id="convert-btn">Convertir</button>
-            </div>
+        <form class="converter" action="#">
+            <fieldset>
+                <legend>Convertir une valeur</legend>
+                <div class="row">
+                    <label for="category">Catégorie</label>
+                    <select id="category">
+                        <option value="length">Longueur</option>
+                        <option value="weight">Masse</option>
+                        <option value="temperature">Température</option>
+                        <option value="area">Aire</option>
+                        <option value="volume">Volume</option>
+                        <option value="time">Temps</option>
+                        <option value="frequency">Fréquence</option>
+                        <option value="speed">Vitesse</option>
+                        <option value="acceleration">Accélération</option>
+                        <option value="force">Force</option>
+                        <option value="pressure">Pression</option>
+                        <option value="energy">Énergie</option>
+                        <option value="power">Puissance</option>
+                        <option value="density">Densité</option>
+                        <option value="flow">Débit</option>
+                        <option value="torque">Couple</option>
+                        <option value="angle">Angle</option>
+                        <option value="data">Données</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label for="from-value">Valeur</label>
+                    <input type="number" id="from-value" value="0" required aria-describedby="from-value-error" />
+                    <span class="error" id="from-value-error">Veuillez saisir une valeur.</span>
+                </div>
+                <div class="row">
+                    <label for="from-unit">De</label>
+                    <select id="from-unit" required aria-describedby="from-unit-error"></select>
+                    <span class="error" id="from-unit-error">Sélectionnez l’unité de départ.</span>
+                </div>
+                <div class="row">
+                    <label for="to-unit">À</label>
+                    <select id="to-unit" required aria-describedby="to-unit-error"></select>
+                    <span class="error" id="to-unit-error">Sélectionnez l’unité d’arrivée.</span>
+                </div>
+                <div class="row">
+                    <label for="precision">Précision</label>
+                    <input type="number" id="precision" min="0" max="6" value="4" />
+                </div>
+                <div class="row">
+                    <button id="convert-btn" type="submit">Convertir</button>
+                </div>
+            </fieldset>
             <div class="row result">
                 <span id="result" aria-live="polite">0</span>
             </div>
             <div class="row">
                 <span id="precision-badge">Précision: 4 décimales</span>
             </div>
-        </div>
+            <noscript><p class="error">Activez JavaScript pour utiliser pleinement ce convertisseur.</p></noscript>
+        </form>
         <p><a class="cta" href="convertisseurs/index.html">Ouvrir le convertisseur</a></p>
         <section>
             <h2>Convertisseurs par catégorie</h2>
