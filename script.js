@@ -141,68 +141,6 @@ const categories = {
     }
 };
 
-const categorySelect = document.getElementById('category');
-const fromValue = document.getElementById('from-value');
-const fromUnit = document.getElementById('from-unit');
-const toUnit = document.getElementById('to-unit');
-const resultSpan = document.getElementById('result');
-const precisionInput = document.getElementById('precision');
-const precisionBadge = document.getElementById('precision-badge');
-const convertBtn = document.getElementById('convert-btn');
-
-function updatePrecisionBadge() {
-    const p = parseInt(precisionInput.value, 10) || 0;
-    precisionBadge.textContent = `Précision: ${p} décimales`;
-}
-
-function populateUnits(cat) {
-    const units = categories[cat].units;
-    fromUnit.innerHTML = '';
-    toUnit.innerHTML = '';
-    for (const key in units) {
-        const optionFrom = document.createElement('option');
-        optionFrom.value = key;
-        optionFrom.textContent = units[key].name;
-        fromUnit.appendChild(optionFrom);
-
-        const optionTo = document.createElement('option');
-        optionTo.value = key;
-        optionTo.textContent = units[key].name;
-        toUnit.appendChild(optionTo);
-    }
-    // reset selections to avoid keeping units from previous categories
-    fromUnit.selectedIndex = 0;
-    toUnit.selectedIndex = Math.min(1, toUnit.options.length - 1);
-}
-
-function convert() {
-    const cat = categorySelect.value;
-    const value = parseFloat(fromValue.value);
-    const from = fromUnit.value;
-    const to = toUnit.value;
-    const precision = parseInt(precisionInput.value, 10) || 0;
-
-    if (isNaN(value)) {
-        resultSpan.textContent = '—';
-        return;
-    }
-
-    let result;
-
-    if (cat === 'temperature') {
-        result = convertTemperature(value, from, to);
-    } else {
-        const base = value * categories[cat].units[from].factor;
-        result = base / categories[cat].units[to].factor;
-    }
-
-    if (typeof result === 'undefined' || isNaN(result)) {
-        resultSpan.textContent = 'Conversion impossible';
-    } else {
-        resultSpan.textContent = result.toFixed(precision);
-    }
-}
-
 function convertTemperature(value, from, to) {
     let celsius;
     switch (from) {
@@ -231,21 +169,88 @@ function convertTemperature(value, from, to) {
     }
 }
 
-categorySelect.addEventListener('change', () => {
-    populateUnits(categorySelect.value);
-    convert();
-});
+function convertValue(cat, value, from, to) {
+    if (cat === 'temperature') {
+        return convertTemperature(value, from, to);
+    }
+    const base = value * categories[cat].units[from].factor;
+    return base / categories[cat].units[to].factor;
+}
 
-fromValue.addEventListener('input', convert);
-fromUnit.addEventListener('change', convert);
-toUnit.addEventListener('change', convert);
-precisionInput.addEventListener('input', () => {
+if (typeof document !== 'undefined') {
+    const categorySelect = document.getElementById('category');
+    const fromValue = document.getElementById('from-value');
+    const fromUnit = document.getElementById('from-unit');
+    const toUnit = document.getElementById('to-unit');
+    const resultSpan = document.getElementById('result');
+    const precisionInput = document.getElementById('precision');
+    const precisionBadge = document.getElementById('precision-badge');
+    const convertBtn = document.getElementById('convert-btn');
+
+    function updatePrecisionBadge() {
+        const p = parseInt(precisionInput.value, 10) || 0;
+        precisionBadge.textContent = `Précision: ${p} décimales`;
+    }
+
+    function populateUnits(cat) {
+        const units = categories[cat].units;
+        fromUnit.innerHTML = '';
+        toUnit.innerHTML = '';
+        for (const key in units) {
+            const optionFrom = document.createElement('option');
+            optionFrom.value = key;
+            optionFrom.textContent = units[key].name;
+            fromUnit.appendChild(optionFrom);
+
+            const optionTo = document.createElement('option');
+            optionTo.value = key;
+            optionTo.textContent = units[key].name;
+            toUnit.appendChild(optionTo);
+        }
+        fromUnit.selectedIndex = 0;
+        toUnit.selectedIndex = Math.min(1, toUnit.options.length - 1);
+    }
+
+    function convert() {
+        const cat = categorySelect.value;
+        const value = parseFloat(fromValue.value);
+        const from = fromUnit.value;
+        const to = toUnit.value;
+        const precision = parseInt(precisionInput.value, 10) || 0;
+
+        if (isNaN(value)) {
+            resultSpan.textContent = '—';
+            return;
+        }
+
+        const result = convertValue(cat, value, from, to);
+
+        if (typeof result === 'undefined' || isNaN(result)) {
+            resultSpan.textContent = 'Conversion impossible';
+        } else {
+            resultSpan.textContent = result.toFixed(precision);
+        }
+    }
+
+    categorySelect.addEventListener('change', () => {
+        populateUnits(categorySelect.value);
+        convert();
+    });
+
+    fromValue.addEventListener('input', convert);
+    fromUnit.addEventListener('change', convert);
+    toUnit.addEventListener('change', convert);
+    precisionInput.addEventListener('input', () => {
+        updatePrecisionBadge();
+        convert();
+    });
+    convertBtn.addEventListener('click', convert);
+
+    populateUnits(categorySelect.value);
     updatePrecisionBadge();
     convert();
-});
-convertBtn.addEventListener('click', convert);
+}
 
-// Initialize
-populateUnits(categorySelect.value);
-updatePrecisionBadge();
-convert();
+if (typeof module !== 'undefined') {
+    module.exports = { categories, convertTemperature, convertValue };
+}
