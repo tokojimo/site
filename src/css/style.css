@@ -119,3 +119,28 @@ footer nav a {
 .popular li {
     margin-bottom: 0.5rem;
 }
+.input {
+    padding: 0.5rem;
+    border: 1px solid #d2d2d7;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.btn {
+    padding: 0.5rem;
+    border: 1px solid #d2d2d7;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background: #007acc;
+    color: #fff;
+    cursor: pointer;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.error {
+    color: #b00020;
+    margin-top: 0.5rem;
+}

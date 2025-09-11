@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>/index.html</loc></url>
   <url><loc>/convertisseurs/</loc></url>
+  <url><loc>/convertisseurs/masse/</loc></url>
+  <url><loc>/convertisseurs/masse/kg-vers-g.html</loc></url>
+  <url><loc>/guides/</loc></url>
   <url><loc>/a-propos.html</loc></url>
   <url><loc>/contact.html</loc></url>
   <url><loc>/politique-de-confidentialite.html</loc></url>
@@ -10,39 +13,8 @@
   <url><loc>/accessibilite.html</loc></url>
   <url><loc>/securite-des-donnees.html</loc></url>
   <url><loc>/sitemap.html</loc></url>
-  <url><loc>/fr/longueur/convertir-metre-en-pied/</loc></url>
-  <url><loc>/fr/longueur/convertir-centimetre-en-pouce/</loc></url>
-  <url><loc>/en/length/convert-meter-to-foot/</loc></url>
-  <url><loc>/hi/lambai/mitar-se-phut-badalna/</loc></url>
-  <url><loc>/ar/alhararah/tahwil-darajah-mawiyah-ila-fahrenhayt/</loc></url>
+  <url><loc>/unites/</loc></url>
+  <url><loc>/tables/</loc></url>
   <url><loc>/404.html</loc></url>
   <url><loc>/500.html</loc></url>
-  <url><loc>/ar/alhararah/</loc></url>
-  <url><loc>/convertisseurs/masse/</loc></url>
-  <url><loc>/convertisseurs/masse/kg-vers-g.html</loc></url>
-  <url><loc>/en/about.html</loc></url>
-  <url><loc>/en/accessibility.html</loc></url>
-  <url><loc>/en/contact.html</loc></url>
-  <url><loc>/en/cookies.html</loc></url>
-  <url><loc>/en/data-security.html</loc></url>
-  <url><loc>/en/length/</loc></url>
-  <url><loc>/en/privacy.html</loc></url>
-  <url><loc>/en/sitemap.html</loc></url>
-  <url><loc>/en/terms.html</loc></url>
-  <url><loc>/fr/longueur/</loc></url>
-  <url><loc>/guides/</loc></url>
-  <url><loc>/hi/about.html</loc></url>
-  <url><loc>/hi/accessibility.html</loc></url>
-  <url><loc>/hi/contact.html</loc></url>
-  <url><loc>/hi/cookies.html</loc></url>
-  <url><loc>/hi/data-security.html</loc></url>
-  <url><loc>/hi/lambai/</loc></url>
-  <url><loc>/hi/privacy.html</loc></url>
-  <url><loc>/hi/sitemap.html</loc></url>
-  <url><loc>/hi/terms.html</loc></url>
-  <url><loc>/intl/</loc></url>
-  <url><loc>/lp/</loc></url>
-  <url><loc>/outils/</loc></url>
-  <url><loc>/tables/</loc></url>
-  <url><loc>/unites/</loc></url>
 </urlset>

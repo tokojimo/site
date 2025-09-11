@@ -1,14 +1,18 @@
 {
-  "name": "site",
+  "name": "mesureconvert",
   "version": "1.0.0",
   "description": "Un site de conversion de mesures avec une esthétique minimaliste inspirée d'Apple.",
-  "main": "script.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "python build.py"
+    "build": "vite build && python build.py",
+    "lint": "eslint src/js && prettier --check src/js src/css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "vite": "^5.0.0"
+  }
 }
