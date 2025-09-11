@@ -1,0 +1,18 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "Un site de conversion de mesures avec une esthétique minimaliste inspirée d'Apple.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:css": "stylelint '**/*.css'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard": "^36.0.0"
+  }
+}
