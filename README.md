@@ -4,7 +4,13 @@ Un site de conversion de mesures avec une esthétique minimaliste inspirée d'Ap
 
 ## Démarrage
 
-Ouvrez `index.html` dans votre navigateur préféré pour utiliser le convertisseur.
+Construisez le site statique dans le dossier `dist/` :
+
+```bash
+npm run build
+```
+
+Ouvrez ensuite `dist/index.html` dans votre navigateur préféré pour utiliser le convertisseur.
 
 Les conversions suivantes sont disponibles :
 

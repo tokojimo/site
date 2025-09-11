@@ -1,0 +1,14 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "Un site de conversion de mesures avec une esthétique minimaliste inspirée d'Apple.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "python build.py"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
