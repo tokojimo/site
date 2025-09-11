@@ -1,0 +1,20 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "Un site de conversion de mesures avec une esthétique minimaliste inspirée d'Apple.",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint . && stylelint \"**/*.css\" && prettier --check \"**/*.{js,css,md}\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "jest": "^29.0.0",
+    "prettier": "^3.0.0",
+    "stylelint": "^15.0.0"
+  }
+}
