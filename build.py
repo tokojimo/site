@@ -27,9 +27,12 @@ for page in pages:
     html = html.replace('{{ title }}', page['title'])
     html = html.replace('{{ description }}', page['description'])
     dest_path = os.path.join(DIST_DIR, page['file'])
-    os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+    dest_dir = os.path.dirname(dest_path)
+    os.makedirs(dest_dir, exist_ok=True)
     with open(dest_path, 'w', encoding='utf-8') as f:
         f.write(html)
+    for asset in ['style.css', 'script.js']:
+        shutil.copy2(asset, os.path.join(dest_dir, asset))
 
 # copy remaining files/directories
 for item in os.listdir('.'):
