@@ -13,6 +13,9 @@ with open(os.path.join(TEMPLATE_DIR, 'layout.html'), encoding='utf-8') as f:
 with open('pages.json', encoding='utf-8') as f:
     pages = json.load(f)
 
+with open(os.path.join('data', 'categories.json'), encoding='utf-8') as f:
+    categories = json.load(f)
+
 if os.path.exists(DIST_DIR):
     shutil.rmtree(DIST_DIR)
 os.makedirs(DIST_DIR, exist_ok=True)
@@ -21,6 +24,18 @@ for page in pages:
     src_path = os.path.join(SRC_DIR, page['file'])
     with open(src_path, encoding='utf-8') as f:
         content = f.read()
+
+    if page['file'] == 'index.html':
+        items = []
+        for key, cat in categories.items():
+            unit_keys = list(cat['units'].keys())
+            examples = ', '.join(unit_keys[:6])
+            items.append(
+                f'<li><a href="convertisseurs/index.html?cat={key}">' 
+                f'{cat["name"]} – Conversions entre {examples}…</a></li>'
+            )
+        cats_html = '\n                '.join(items)
+        content = content.replace('<!-- CATEGORIES_LIST -->', cats_html)
     html = layout.replace('{{ header }}', header)
     html = html.replace('{{ footer }}', footer)
     html = html.replace('{{ content }}', content)
