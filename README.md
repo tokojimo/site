@@ -4,10 +4,11 @@ Un site de conversion de mesures avec une esthétique minimaliste inspirée d'Ap
 
 ## Démarrage
 
-Construisez le site statique dans le dossier `dist/` :
+Installez les dépendances Python puis construisez le site statique dans le dossier `dist/` :
 
 ```bash
-npm run build
+pip install -r requirements.txt
+python build.py
 ```
 
 Ouvrez ensuite `dist/index.html` dans votre navigateur préféré pour utiliser le convertisseur.
