@@ -42,3 +42,8 @@ Visualisez le site directement sur StackBlitz : https://stackblitz.com/github/to
 - [Accessibilité](accessibilite.html)
 - [Sécurité des données](securite-des-donnees.html)
 - [Plan du site](sitemap.html)
+
+## Développement
+
+- `npm run lint` – analyse le code source avec ESLint, Stylelint et Prettier.
+- `npm test` – exécute les tests unitaires avec Jest.
