@@ -19,6 +19,15 @@
   <url><loc>/500.html</loc></url>
   <url><loc>/ar/alhararah/</loc></url>
   <url><loc>/convertisseurs/masse/</loc></url>
+  <url><loc>/convertisseurs/longueur/</loc></url>
+  <url><loc>/convertisseurs/temperature/</loc></url>
+  <url><loc>/convertisseurs/volume/</loc></url>
+  <url><loc>/convertisseurs/aire/</loc></url>
+  <url><loc>/convertisseurs/vitesse/</loc></url>
+  <url><loc>/convertisseurs/temps/</loc></url>
+  <url><loc>/convertisseurs/energie/</loc></url>
+  <url><loc>/convertisseurs/pression/</loc></url>
+  <url><loc>/convertisseurs/donnees/</loc></url>
   <url><loc>/convertisseurs/masse/kg-vers-g.html</loc></url>
   <url><loc>/en/about.html</loc></url>
   <url><loc>/en/accessibility.html</loc></url>
