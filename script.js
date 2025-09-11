@@ -148,7 +148,7 @@ const toUnit = document.getElementById('to-unit');
 const resultSpan = document.getElementById('result');
 const precisionInput = document.getElementById('precision');
 const precisionBadge = document.getElementById('precision-badge');
-const convertBtn = document.getElementById('convert-btn');
+const converterForm = document.querySelector('.converter');
 
 function updatePrecisionBadge() {
     const p = parseInt(precisionInput.value, 10) || 0;
@@ -243,7 +243,11 @@ precisionInput.addEventListener('input', () => {
     updatePrecisionBadge();
     convert();
 });
-convertBtn.addEventListener('click', convert);
+
+converterForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    convert();
+});
 
 // Initialize
 populateUnits(categorySelect.value);

@@ -34,6 +34,28 @@ main {
     width: 100%;
 }
 
+.converter fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.converter legend {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.error {
+    color: #b00020;
+    display: none;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.converter :invalid + .error {
+    display: block;
+}
+
 .row {
     display: flex;
     flex-direction: column;
