@@ -1,14 +1,21 @@
-# Convertisseur Universel
+# MesureConvert
 
 Un site de conversion de mesures avec une esthétique minimaliste inspirée d'Apple.
 
 ## Démarrage
 
-Installez les dépendances Python puis construisez le site statique dans le dossier `dist/` :
+Installez les dépendances Python et JavaScript puis construisez le site statique dans le dossier `dist/` :
 
 ```bash
 pip install -r requirements.txt
-python build.py
+npm install
+npm run build
+```
+
+Pour vérifier la qualité du code :
+
+```bash
+npm run lint
 ```
 
 Ouvrez ensuite `dist/index.html` dans votre navigateur préféré pour utiliser le convertisseur.

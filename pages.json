@@ -6,42 +6,62 @@
   },
   {
     "file": "a-propos.html",
-    "title": "À propos - Convertisseur Universel",
-    "description": "Découvrez l'objectif et l'équipe derrière Convertisseur Universel."
+    "title": "À propos - MesureConvert",
+    "description": "Découvrez l'objectif et l'équipe derrière MesureConvert."
   },
   {
     "file": "contact.html",
-    "title": "Contact - Convertisseur Universel",
-    "description": "Contactez l'équipe de Convertisseur Universel pour toute question ou suggestion."
+    "title": "Contact - MesureConvert",
+    "description": "Contactez l'équipe de MesureConvert pour toute question ou suggestion."
   },
   {
     "file": "conditions-generales.html",
-    "title": "Conditions générales - Convertisseur Universel",
-    "description": "Conditions générales d'utilisation du site Convertisseur Universel."
+    "title": "Conditions générales - MesureConvert",
+    "description": "Conditions générales d'utilisation du site MesureConvert."
   },
   {
     "file": "cookies.html",
-    "title": "Cookies - Convertisseur Universel",
-    "description": "Informations sur l'utilisation des cookies et la gestion de vos préférences sur Convertisseur Universel."
+    "title": "Cookies - MesureConvert",
+    "description": "Informations sur l'utilisation des cookies et la gestion de vos préférences sur MesureConvert."
   },
   {
     "file": "accessibilite.html",
-    "title": "Accessibilité - Convertisseur Universel",
-    "description": "Notre engagement pour rendre Convertisseur Universel accessible à tous les utilisateurs."
+    "title": "Accessibilité - MesureConvert",
+    "description": "Notre engagement pour rendre MesureConvert accessible à tous les utilisateurs."
   },
   {
     "file": "politique-de-confidentialite.html",
-    "title": "Politique de confidentialité - Convertisseur Universel",
-    "description": "Découvrez comment Convertisseur Universel protège et utilise vos données personnelles."
+    "title": "Politique de confidentialité - MesureConvert",
+    "description": "Découvrez comment MesureConvert protège et utilise vos données personnelles."
   },
   {
     "file": "securite-des-donnees.html",
-    "title": "Sécurité des données - Convertisseur Universel",
-    "description": "Mesures de sécurité mises en place pour protéger vos informations sur Convertisseur Universel."
+    "title": "Sécurité des données - MesureConvert",
+    "description": "Mesures de sécurité mises en place pour protéger vos informations sur MesureConvert."
   },
   {
     "file": "sitemap.html",
-    "title": "Plan du site - Convertisseur Universel",
-    "description": "Plan du site Convertisseur Universel pour accéder rapidement à toutes les pages."
+    "title": "Plan du site - MesureConvert",
+    "description": "Plan du site MesureConvert pour accéder rapidement à toutes les pages."
+  },
+  {
+    "file": "convertisseurs/index.html",
+    "title": "Tous les convertisseurs d’unités | MesureConvert",
+    "description": "Accédez aux convertisseurs par catégorie. Longueur, masse, température, etc."
+  },
+  {
+    "file": "convertisseurs/masse/index.html",
+    "title": "Convertisseurs de masse | MesureConvert",
+    "description": "Outils pour convertir les unités de masse."
+  },
+  {
+    "file": "convertisseurs/masse/kg-vers-g.html",
+    "title": "Kilogrammes en grammes | MesureConvert",
+    "description": "Convertir des kilogrammes en grammes avec précision."
+  },
+  {
+    "file": "guides/index.html",
+    "title": "Guides pratiques | MesureConvert",
+    "description": "Guides pour comprendre les conversions."
   }
 ]

@@ -1,46 +1,62 @@
-import os
+from pathlib import Path
 import json
 import shutil
+import sys
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-SRC_DIR = 'src'
-DIST_DIR = 'dist'
-TEMPLATE_DIR = 'templates'
+SRC_DIR = Path('src')
+DIST_DIR = Path('dist')
+TEMPLATE_DIR = Path('templates')
 
 env = Environment(
-    loader=FileSystemLoader(TEMPLATE_DIR),
+    loader=FileSystemLoader(str(TEMPLATE_DIR)),
     autoescape=select_autoescape(['html', 'xml'])
 )
 layout = env.get_template('layout.html')
 
-with open('pages.json', encoding='utf-8') as f:
+manifest_path = DIST_DIR / 'manifest.json'
+js_file = 'script.js'
+css_file = 'style.css'
+if manifest_path.exists():
+    with manifest_path.open(encoding='utf-8') as f:
+        manifest = json.load(f)
+    entry = manifest.get('src/js/script.js', {})
+    js_file = entry.get('file', js_file)
+    css_file = entry.get('css', [css_file])[0]
+
+with Path('pages.json').open(encoding='utf-8') as f:
     pages = json.load(f)
 
-if os.path.exists(DIST_DIR):
-    shutil.rmtree(DIST_DIR)
-os.makedirs(DIST_DIR, exist_ok=True)
+for idx, page in enumerate(pages):
+    if not all(key in page for key in ('file', 'title', 'description')):
+        print(f"Entrée {idx} invalide dans pages.json", file=sys.stderr)
+        sys.exit(1)
+    src_path = SRC_DIR / page['file']
+    if not src_path.exists():
+        print(f"Fichier source manquant: {src_path}", file=sys.stderr)
+        sys.exit(1)
+
+DIST_DIR.mkdir(exist_ok=True)
 
 for page in pages:
-    src_path = os.path.join(SRC_DIR, page['file'])
-    with open(src_path, encoding='utf-8') as f:
-        content = f.read()
+    src_path = SRC_DIR / page['file']
+    content = src_path.read_text(encoding='utf-8')
     html = layout.render(
         title=page['title'],
         description=page['description'],
-        content=content
+        content=content,
+        js_file=js_file,
+        css_file=css_file
     )
-    dest_path = os.path.join(DIST_DIR, page['file'])
-    os.makedirs(os.path.dirname(dest_path), exist_ok=True)
-    with open(dest_path, 'w', encoding='utf-8') as f:
-        f.write(html)
+    dest_path = DIST_DIR / page['file']
+    dest_path.parent.mkdir(parents=True, exist_ok=True)
+    dest_path.write_text(html, encoding='utf-8')
 
-# copy remaining files/directories
-for item in os.listdir('.'):
-    if item in {SRC_DIR, TEMPLATE_DIR, DIST_DIR, '.git', 'node_modules', '__pycache__', 'pages.json', 'migrate.py', 'build.py', 'package.json', 'package-lock.json', 'requirements.txt'}:
+for item in Path('.').iterdir():
+    if item.name in {SRC_DIR.name, TEMPLATE_DIR.name, DIST_DIR.name, 'node_modules', 'pages.json', 'build.py', 'package.json', 'package-lock.json', 'requirements.txt', '.git', '.gitignore'}:
         continue
-    src_item = item
-    dest_item = os.path.join(DIST_DIR, item)
-    if os.path.isdir(src_item):
-        shutil.copytree(src_item, dest_item, dirs_exist_ok=True)
+    dest = DIST_DIR / item.name
+    if item.is_dir():
+        shutil.copytree(item, dest, dirs_exist_ok=True)
     else:
-        shutil.copy2(src_item, dest_item)
+        shutil.copy2(item, dest)
