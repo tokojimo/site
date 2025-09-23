@@ -10,6 +10,11 @@
     "description": "Activez la géolocalisation pour centrer une carte OpenStreetMap sur votre position depuis MesureConvert."
   },
   {
+    "file": "coin-detail.html",
+    "title": "Détail du coin de cueillette | MesureConvert",
+    "description": "Consultez les informations détaillées d’un coin de cueillette : historique, carte, photos et statistiques."
+  },
+  {
     "file": "a-propos.html",
     "title": "À propos - MesureConvert",
     "description": "Découvrez l'objectif et l'équipe derrière MesureConvert."

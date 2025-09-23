@@ -56,3 +56,10 @@ Visualisez le site directement sur StackBlitz : https://stackblitz.com/github/to
 - [Accessibilité](accessibilite.html)
 - [Sécurité des données](securite-des-donnees.html)
 - [Plan du site](sitemap.html)
+
+## Mocks champignons
+
+Les composants de la page `coin-detail.html` consomment les données du fichier `data/spot-detail.json`.
+Mettez à jour ce fichier pour ajuster les informations affichées (coin, cueillettes, photos).
+Vérifiez que la structure JSON conserve les clés `spot`, `pickings` et `photos`, et que la page reste conforme après `npm run build`.
+

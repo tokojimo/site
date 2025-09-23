@@ -1,0 +1,204 @@
+{
+  "spot": {
+    "id": "spot-fontainebleau-apremont",
+    "name": "Chênaie de Fontainebleau",
+    "subtitle": "Clairière des Gorges d'Apremont",
+    "city": "Fontainebleau",
+    "address": "Route de la Plaine de la Haute Borne, 77300 Fontainebleau, France",
+    "precision": "approx_100m",
+    "coordinates": {
+      "lat": 48.44562,
+      "lng": 2.63748
+    },
+    "createdAt": "2022-09-18T09:45:00.000Z",
+    "pickingsCount": 18,
+    "lastPicking": {
+      "id": "picking-2024-05-06",
+      "date": "2024-05-06T07:30:00.000Z",
+      "rating": 4.5,
+      "weather": {
+        "icon": "partly-cloudy",
+        "label": "Éclaircies humides"
+      },
+      "species": [
+        {
+          "name": "Cèpe de Bordeaux",
+          "quantity": 6,
+          "unit": "pièces",
+          "weightKg": 1.3
+        },
+        {
+          "name": "Girolle",
+          "quantity": 12,
+          "unit": "pièces",
+          "weightKg": 0.6
+        }
+      ],
+      "totalWeightKg": 1.9,
+      "notes": "Sous-bois humide et mousse abondante à l'ombre des pins.",
+      "temperatureC": 14,
+      "humidity": 82
+    },
+    "activitySeries": [
+      { "date": "2024-04-23", "quantity": 0.4 },
+      { "date": "2024-04-24", "quantity": 0.0 },
+      { "date": "2024-04-25", "quantity": 0.6 },
+      { "date": "2024-04-26", "quantity": 0.8 },
+      { "date": "2024-04-27", "quantity": 1.1 },
+      { "date": "2024-04-28", "quantity": 0.2 },
+      { "date": "2024-04-29", "quantity": 0.0 },
+      { "date": "2024-04-30", "quantity": 0.5 },
+      { "date": "2024-05-01", "quantity": 0.7 },
+      { "date": "2024-05-02", "quantity": 0.9 },
+      { "date": "2024-05-03", "quantity": 0.0 },
+      { "date": "2024-05-04", "quantity": 1.2 },
+      { "date": "2024-05-05", "quantity": 1.0 },
+      { "date": "2024-05-06", "quantity": 1.9 }
+    ]
+  },
+  "pickings": [
+    {
+      "id": "picking-2024-05-06",
+      "date": "2024-05-06T07:30:00.000Z",
+      "rating": 4.5,
+      "species": [
+        { "name": "Cèpe de Bordeaux", "quantity": 6, "unit": "pièces", "weightKg": 1.3 },
+        { "name": "Girolle", "quantity": 12, "unit": "pièces", "weightKg": 0.6 }
+      ],
+      "totalWeightKg": 1.9,
+      "weather": {
+        "icon": "partly-cloudy",
+        "label": "Éclaircies humides"
+      }
+    },
+    {
+      "id": "picking-2024-05-03",
+      "date": "2024-05-03T06:50:00.000Z",
+      "rating": 4.2,
+      "species": [
+        { "name": "Morille conique", "quantity": 9, "unit": "pièces", "weightKg": 0.9 }
+      ],
+      "totalWeightKg": 0.9,
+      "weather": {
+        "icon": "rainy",
+        "label": "Pluie légère"
+      }
+    },
+    {
+      "id": "picking-2024-04-30",
+      "date": "2024-04-30T09:15:00.000Z",
+      "rating": 3.5,
+      "species": [
+        { "name": "Coprin chevelu", "quantity": 15, "unit": "pièces", "weightKg": 0.7 },
+        { "name": "Tricholome de la Saint-Georges", "quantity": 8, "unit": "pièces", "weightKg": 0.5 }
+      ],
+      "totalWeightKg": 1.2,
+      "weather": {
+        "icon": "cloudy",
+        "label": "Ciel couvert"
+      }
+    },
+    {
+      "id": "picking-2024-04-27",
+      "date": "2024-04-27T08:20:00.000Z",
+      "rating": 4.7,
+      "species": [
+        { "name": "Morille blonde", "quantity": 11, "unit": "pièces", "weightKg": 1.1 }
+      ],
+      "totalWeightKg": 1.1,
+      "weather": {
+        "icon": "sunny",
+        "label": "Grand soleil"
+      }
+    },
+    {
+      "id": "picking-2024-04-24",
+      "date": "2024-04-24T10:05:00.000Z",
+      "rating": 3.0,
+      "species": [
+        { "name": "Collybie beurrée", "quantity": 5, "unit": "pièces", "weightKg": 0.3 }
+      ],
+      "totalWeightKg": 0.3,
+      "weather": {
+        "icon": "windy",
+        "label": "Vent d'ouest"
+      }
+    },
+    {
+      "id": "picking-2024-04-22",
+      "date": "2024-04-22T07:55:00.000Z",
+      "rating": 2.5,
+      "species": [
+        { "name": "Marasme des Oréades", "quantity": 20, "unit": "pièces", "weightKg": 0.4 }
+      ],
+      "totalWeightKg": 0.4,
+      "weather": {
+        "icon": "foggy",
+        "label": "Brume matinale"
+      }
+    },
+    {
+      "id": "picking-2024-04-18",
+      "date": "2024-04-18T09:40:00.000Z",
+      "rating": 4.9,
+      "species": [
+        { "name": "Morille conique", "quantity": 13, "unit": "pièces", "weightKg": 1.2 }
+      ],
+      "totalWeightKg": 1.2,
+      "weather": {
+        "icon": "sunny",
+        "label": "Temps clair"
+      }
+    },
+    {
+      "id": "picking-2024-04-14",
+      "date": "2024-04-14T08:10:00.000Z",
+      "rating": 3.8,
+      "species": [
+        { "name": "Tricholome de la Saint-Georges", "quantity": 10, "unit": "pièces", "weightKg": 0.8 }
+      ],
+      "totalWeightKg": 0.8,
+      "weather": {
+        "icon": "partly-cloudy",
+        "label": "Éclaircies"
+      }
+    }
+  ],
+  "photos": [
+    {
+      "id": "photo-01",
+      "src": "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=800&q=80",
+      "alt": "Sous-bois couvert de mousse avec lumière dorée",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "id": "photo-02",
+      "src": "https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?auto=format&fit=crop&w=800&q=80",
+      "alt": "Panier de girolles fraîches",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "id": "photo-03",
+      "src": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80",
+      "alt": "Affleurement rocheux dans la forêt de Fontainebleau",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "id": "photo-04",
+      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
+      "alt": "Sentier ombragé avec fougères",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "id": "photo-05",
+      "src": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80",
+      "alt": "Coupe de cèpes prêts à être cuisinés",
+      "width": 800,
+      "height": 800
+    }
+  ]
+}
