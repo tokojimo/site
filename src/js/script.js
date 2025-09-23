@@ -120,7 +120,11 @@ function initializeConverter() {
   });
 
   async function init() {
-    const response = await fetch("/data/units.json");
+    const unitsUrl = new URL(
+      /* @vite-ignore */ "../data/units.json",
+      import.meta.url,
+    );
+    const response = await fetch(unitsUrl);
     categories = await response.json();
     populateCategoryOptions();
     populateUnits(categorySelect.value);
