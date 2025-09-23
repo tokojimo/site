@@ -5,6 +5,11 @@
     "description": "Convertissez longueur, masse, température, volume, vitesse, données et plus. Résultats fiables, formules et exemples."
   },
   {
+    "file": "map.html",
+    "title": "Carte interactive et géolocalisation | MesureConvert",
+    "description": "Activez la géolocalisation pour centrer une carte OpenStreetMap sur votre position depuis MesureConvert."
+  },
+  {
     "file": "a-propos.html",
     "title": "À propos - MesureConvert",
     "description": "Découvrez l'objectif et l'équipe derrière MesureConvert."
