@@ -1,5 +1,6 @@
 import "../css/style.css";
 import { convertTemperature } from "./temperature.js";
+import { initializeMapPage } from "./map.js";
 
 function initializeConverter() {
   const categorySelect = document.getElementById("category");
@@ -131,3 +132,4 @@ function initializeConverter() {
 }
 
 initializeConverter();
+initializeMapPage();

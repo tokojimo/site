@@ -1,0 +1,13 @@
+<h1>Carte interactive</h1>
+        <p>Affichez une carte centrée sur votre position et vérifiez si la géolocalisation est disponible dans votre navigateur.</p>
+        <section class="map-section">
+            <div class="map-actions">
+                <button type="button" id="geolocate-button" class="btn">Activer la géolocalisation</button>
+                <p id="map-status" class="map-status" aria-live="polite"></p>
+                <p id="map-error" class="error" role="alert" hidden></p>
+            </div>
+            <div id="map-container" class="map-container" role="region" aria-live="polite" aria-label="Carte centrée sur votre position">
+                <iframe id="map-frame" title="Carte OpenStreetMap" loading="lazy"></iframe>
+            </div>
+            <p class="map-caption">La carte s’appuie sur OpenStreetMap et n’envoie aucune donnée personnelle vers nos serveurs.</p>
+        </section>
