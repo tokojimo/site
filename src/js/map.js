@@ -14,6 +14,11 @@ function formatLongitude(value) {
 }
 
 function buildMapUrl({ lat, lng }) {
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
+    throw new TypeError(
+      "Les coordonnées fournies à la carte doivent être des nombres finis.",
+    );
+  }
   const latClamped = clamp(lat, -90, 90);
   const lngClamped = clamp(lng, -180, 180);
   const delta = MAP_DELTA;
@@ -32,6 +37,10 @@ function buildMapUrl({ lat, lng }) {
 }
 
 function updateMap(frame, container, coords) {
+  if (!coords || !Number.isFinite(coords.lat) || !Number.isFinite(coords.lng)) {
+    console.error("Coordonnées invalides reçues pour la carte.", coords);
+    return;
+  }
   frame.src = buildMapUrl(coords);
   const latText = clamp(coords.lat, -90, 90).toFixed(4);
   const lngText = clamp(coords.lng, -180, 180).toFixed(4);
@@ -152,6 +161,14 @@ export function initializeMapPage() {
 
     const onSuccess = (position) => {
       const { latitude, longitude } = position.coords;
+      if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) {
+        handleFailure(
+          new Error(
+            "Le navigateur a fourni des coordonnées invalides. Impossible de mettre à jour la carte.",
+          ),
+        );
+        return;
+      }
       updateMap(frame, container, { lat: latitude, lng: longitude });
       setStatus(
         `Carte centrée sur votre position (${latitude.toFixed(4)}°, ${longitude.toFixed(4)}°).`,
