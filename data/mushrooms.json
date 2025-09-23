@@ -1,0 +1,22 @@
+[
+  {"id": "cepe-bordeaux", "name": "Cèpe de Bordeaux", "latin": "Boletus edulis"},
+  {"id": "girolle", "name": "Girolle commune", "latin": "Cantharellus cibarius"},
+  {"id": "morille-blonde", "name": "Morille blonde", "latin": "Morchella esculenta"},
+  {"id": "pied-mouton", "name": "Pied-de-mouton", "latin": "Hydnum repandum"},
+  {"id": "trompette-mort", "name": "Trompette de la mort", "latin": "Craterellus cornucopioides"},
+  {"id": "chanterelle-tube", "name": "Chanterelle en tube", "latin": "Cantharellus tubaeformis"},
+  {"id": "coulemelle", "name": "Coulemelle", "latin": "Macrolepiota procera"},
+  {"id": "amanite-cesars", "name": "Amanite des Césars", "latin": "Amanita caesarea"},
+  {"id": "pleurote-huitre", "name": "Pleurote en huître", "latin": "Pleurotus ostreatus"},
+  {"id": "tricholome-saint-georges", "name": "Tricholome de la Saint-Georges", "latin": "Calocybe gambosa"},
+  {"id": "rose-pres", "name": "Rosé-des-prés", "latin": "Agaricus campestris"},
+  {"id": "lactaire-delicieux", "name": "Lactaire délicieux", "latin": "Lactarius deliciosus"},
+  {"id": "marasme-oreades", "name": "Marasme des Oréades", "latin": "Marasmius oreades"},
+  {"id": "coprin-chevelu", "name": "Coprin chevelu", "latin": "Coprinus comatus"},
+  {"id": "mousseron-automne", "name": "Mousseron d'automne", "latin": "Clitocybe nebularis"},
+  {"id": "armillaire-ventru", "name": "Armillaire ventru", "latin": "Armillaria mellea"},
+  {"id": "shiitake", "name": "Shiitake", "latin": "Lentinula edodes"},
+  {"id": "pleurote-orme", "name": "Pleurote de l'orme", "latin": "Pleurotus pulmonarius"},
+  {"id": "agaric-jaunissant", "name": "Agaric jaunissant", "latin": "Agaricus xanthodermus"},
+  {"id": "agaric-des-bois", "name": "Agaric des bois", "latin": "Agaricus silvaticus"}
+]
