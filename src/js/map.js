@@ -1,3 +1,5 @@
+import { initNewSpotModal } from "./new-spot-modal.js";
+
 const DEFAULT_LOCATION = { lat: 48.8566, lng: 2.3522 };
 const MAP_DELTA = 0.02;
 
@@ -51,6 +53,7 @@ function updateMap(frame, container, coords) {
 }
 
 export function initializeMapPage() {
+  initNewSpotModal();
   const frame = document.getElementById("map-frame");
   const button = document.getElementById("geolocate-button");
   const status = document.getElementById("map-status");
