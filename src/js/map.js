@@ -139,7 +139,7 @@ export function initializeMapPage() {
     }
 
     if (
-      "permissions" in navigator &&
+      navigator.permissions &&
       typeof navigator.permissions.query === "function"
     ) {
       try {
