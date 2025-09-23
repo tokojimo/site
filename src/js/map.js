@@ -1,16 +1,32 @@
 const DEFAULT_LOCATION = { lat: 48.8566, lng: 2.3522 };
 const MAP_DELTA = 0.02;
+const WEB_MERCATOR_MAX_LATITUDE = 85.0511;
+const WEB_MERCATOR_MAX_LONGITUDE = 180;
+const LONGITUDE_EPSILON = 1e-9;
+
+const WEB_MERCATOR_MIN_LATITUDE = -WEB_MERCATOR_MAX_LATITUDE;
+const WEB_MERCATOR_MIN_LONGITUDE = -WEB_MERCATOR_MAX_LONGITUDE;
+
+function clampLatitude(value) {
+  return clamp(value, WEB_MERCATOR_MIN_LATITUDE, WEB_MERCATOR_MAX_LATITUDE);
+}
+
+function clampLongitude(value) {
+  const safeMax = WEB_MERCATOR_MAX_LONGITUDE - LONGITUDE_EPSILON;
+  const safeMin = WEB_MERCATOR_MIN_LONGITUDE + LONGITUDE_EPSILON;
+  return clamp(value, safeMin, safeMax);
+}
 
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
 }
 
 function formatLatitude(value) {
-  return clamp(value, -90, 90).toFixed(6);
+  return clampLatitude(value).toFixed(6);
 }
 
 function formatLongitude(value) {
-  return clamp(value, -180, 180).toFixed(6);
+  return clampLongitude(value).toFixed(6);
 }
 
 function buildMapUrl({ lat, lng }) {
@@ -19,8 +35,8 @@ function buildMapUrl({ lat, lng }) {
       "Les coordonnées fournies à la carte doivent être des nombres finis.",
     );
   }
-  const latClamped = clamp(lat, -90, 90);
-  const lngClamped = clamp(lng, -180, 180);
+  const latClamped = clampLatitude(lat);
+  const lngClamped = clampLongitude(lng);
   const delta = MAP_DELTA;
 
   const left = formatLongitude(lngClamped - delta);
@@ -42,8 +58,8 @@ function updateMap(frame, container, coords) {
     return;
   }
   frame.src = buildMapUrl(coords);
-  const latText = clamp(coords.lat, -90, 90).toFixed(4);
-  const lngText = clamp(coords.lng, -180, 180).toFixed(4);
+  const latText = clampLatitude(coords.lat).toFixed(4);
+  const lngText = clampLongitude(coords.lng).toFixed(4);
   container.setAttribute(
     "aria-label",
     `Carte centrée sur les coordonnées ${latText}°, ${lngText}°`,
@@ -135,12 +151,10 @@ export function initializeMapPage() {
       return;
     }
 
-    if (
-      "permissions" in navigator &&
-      typeof navigator.permissions.query === "function"
-    ) {
+    const permissions = navigator.permissions;
+    if (permissions && typeof permissions.query === "function") {
       try {
-        const permissionStatus = await navigator.permissions.query({
+        const permissionStatus = await permissions.query({
           name: "geolocation",
         });
         if (permissionStatus.state === "denied") {
@@ -160,11 +174,36 @@ export function initializeMapPage() {
     setStatus("Recherche de votre position…");
 
     const onSuccess = (position) => {
+      if (
+        !position ||
+        typeof position !== "object" ||
+        !position.coords ||
+        typeof position.coords !== "object"
+      ) {
+        handleFailure(
+          new Error(
+            "Le navigateur a fourni une réponse inattendue. Impossible de déterminer vos coordonnées.",
+          ),
+        );
+        return;
+      }
+
       const { latitude, longitude } = position.coords;
       if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) {
         handleFailure(
           new Error(
             "Le navigateur a fourni des coordonnées invalides. Impossible de mettre à jour la carte.",
+          ),
+        );
+        return;
+      }
+      if (
+        Math.abs(latitude) > WEB_MERCATOR_MAX_LATITUDE ||
+        Math.abs(longitude) > WEB_MERCATOR_MAX_LONGITUDE
+      ) {
+        handleFailure(
+          new Error(
+            "Les coordonnées fournies sont hors de portée pour l'affichage de la carte.",
           ),
         );
         return;
