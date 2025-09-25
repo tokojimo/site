@@ -9,6 +9,36 @@ const LONGITUDE_EPSILON = 1e-9;
 const WEB_MERCATOR_MIN_LATITUDE = -WEB_MERCATOR_MAX_LATITUDE;
 const WEB_MERCATOR_MIN_LONGITUDE = -WEB_MERCATOR_MAX_LONGITUDE;
 
+function isFiniteNumber(value) {
+  return typeof value === "number" && Number.isFinite(value);
+}
+
+function validateCoordinates(coords) {
+  if (!coords || typeof coords !== "object") {
+    return null;
+  }
+
+  const { lat, lng } = coords;
+
+  if (!isFiniteNumber(lat) || !isFiniteNumber(lng)) {
+    return null;
+  }
+
+  if (
+    lat < WEB_MERCATOR_MIN_LATITUDE ||
+    lat > WEB_MERCATOR_MAX_LATITUDE ||
+    lng < WEB_MERCATOR_MIN_LONGITUDE ||
+    lng > WEB_MERCATOR_MAX_LONGITUDE
+  ) {
+    return null;
+  }
+
+  return {
+    lat: clampLatitude(lat),
+    lng: clampLongitude(lng),
+  };
+}
+
 function clampLatitude(value) {
   return clamp(value, WEB_MERCATOR_MIN_LATITUDE, WEB_MERCATOR_MAX_LATITUDE);
 }
@@ -54,18 +84,38 @@ function buildMapUrl({ lat, lng }) {
   return `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${marker}`;
 }
 
-function updateMap(frame, container, coords) {
-  if (!coords || !Number.isFinite(coords.lat) || !Number.isFinite(coords.lng)) {
-    console.error("Coordonnées invalides reçues pour la carte.", coords);
-    return;
+function updateMap(frame, container, coords, options = {}) {
+  const { fallback, warnOnFallback = true } = options;
+
+  let validatedCoords = validateCoordinates(coords);
+
+  if (!validatedCoords && fallback) {
+    const fallbackCoords = validateCoordinates(fallback);
+    if (fallbackCoords) {
+      if (warnOnFallback) {
+        console.warn(
+          "Coordonnées invalides reçues pour la carte. Utilisation du centre par défaut.",
+          coords,
+        );
+      }
+      validatedCoords = fallbackCoords;
+    }
   }
-  frame.src = buildMapUrl(coords);
-  const latText = clampLatitude(coords.lat).toFixed(4);
-  const lngText = clampLongitude(coords.lng).toFixed(4);
+
+  if (!validatedCoords) {
+    console.error("Coordonnées invalides reçues pour la carte.", coords);
+    return null;
+  }
+
+  frame.src = buildMapUrl(validatedCoords);
+  const latText = validatedCoords.lat.toFixed(4);
+  const lngText = validatedCoords.lng.toFixed(4);
   container.setAttribute(
     "aria-label",
     `Carte centrée sur les coordonnées ${latText}°, ${lngText}°`,
   );
+
+  return validatedCoords;
 }
 
 export function initializeMapPage() {
@@ -192,7 +242,11 @@ export function initializeMapPage() {
       }
 
       const { latitude, longitude } = position.coords;
-      if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) {
+      if (!isFiniteNumber(latitude) || !isFiniteNumber(longitude)) {
+        console.warn(
+          "Le navigateur a fourni des coordonnées non finies pour la carte.",
+          position.coords,
+        );
         handleFailure(
           new Error(
             "Le navigateur a fourni des coordonnées invalides. Impossible de mettre à jour la carte.",
@@ -200,10 +254,17 @@ export function initializeMapPage() {
         );
         return;
       }
+
       if (
-        Math.abs(latitude) > WEB_MERCATOR_MAX_LATITUDE ||
-        Math.abs(longitude) > WEB_MERCATOR_MAX_LONGITUDE
+        latitude < WEB_MERCATOR_MIN_LATITUDE ||
+        latitude > WEB_MERCATOR_MAX_LATITUDE ||
+        longitude < WEB_MERCATOR_MIN_LONGITUDE ||
+        longitude > WEB_MERCATOR_MAX_LONGITUDE
       ) {
+        console.warn(
+          "Les coordonnées de géolocalisation sont hors limites pour l'affichage de la carte.",
+          position.coords,
+        );
         handleFailure(
           new Error(
             "Les coordonnées fournies sont hors de portée pour l'affichage de la carte.",
@@ -211,9 +272,23 @@ export function initializeMapPage() {
         );
         return;
       }
-      updateMap(frame, container, { lat: latitude, lng: longitude });
+
+      const rawCoords = { lat: latitude, lng: longitude };
+      const mapCoordinates = updateMap(frame, container, rawCoords, {
+        fallback: DEFAULT_LOCATION,
+      });
+
+      if (!mapCoordinates) {
+        handleFailure(
+          new Error(
+            "Impossible de mettre à jour la carte avec les coordonnées fournies par le navigateur.",
+          ),
+        );
+        return;
+      }
+
       setStatus(
-        `Carte centrée sur votre position (${latitude.toFixed(4)}°, ${longitude.toFixed(4)}°).`,
+        `Carte centrée sur votre position (${mapCoordinates.lat.toFixed(4)}°, ${mapCoordinates.lng.toFixed(4)}°).`,
       );
       finalize();
     };
